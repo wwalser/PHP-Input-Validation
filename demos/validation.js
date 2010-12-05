@@ -6,7 +6,7 @@ $(document).ready(function() {
 			type: 'POST',
 			url: form.attr('action'),
 			data: (function() {
-				var data = {};
+				var data = {validate: 1};
 				form.find('input:not([type="submit"])').each(function() {
 					data[$(this).attr('name')] = $(this).val();
 				});

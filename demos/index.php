@@ -1,5 +1,6 @@
 <?php
 require('core.php');
+
 function validateIndex(){
 	$oValidation = new Validation($oRequest);
 	return array(
@@ -21,6 +22,14 @@ function validateIndex(){
 			$oValidation->minLength(5, 'Passwords must be atleast five characters in length. Please provide a valid password.'),
 		),
 	);
+}
+
+if ($_POST['validate']) {
+	unset($_POST['validate']);
+	$oValidation = new Validation($oRequest);
+	$aErrors = $oValidation->validate(validateIndex(), $_POST);
+	echo json_encode($aErrors);
+	die;
 }
 
 $foo = 'this works?';
