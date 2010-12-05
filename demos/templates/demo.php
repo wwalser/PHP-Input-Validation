@@ -2,7 +2,8 @@
 <html>
 	<head>
 		<link rel="stylesheet" type="text/css" media="all" href="style.css">
-		<script type="text/javascript" charset="utf-8" src="behavior.js"></script>
+		<script type="text/javascript" charset="utf-8" src="jquery-1.4.4.min.js"></script>
+		<script type="text/javascript" charset="utf-8" src="validation.js"></script>
 	</head>
 	<body>
 		<h1>MacGuffin App *beta</h1>
