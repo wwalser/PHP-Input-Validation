@@ -92,5 +92,5 @@ class Validation
 		
 		return $aErrors;
 	}
-	
+}	
 ?>
