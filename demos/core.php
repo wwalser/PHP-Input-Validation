@@ -2,7 +2,7 @@
 
 function __autoload($filename) {
 	$fileLocation = str_replace('_', '/', $filename);
-	require('./' . $fileLocation . '.php');
+	require('../' . $fileLocation . '.php');
 }
 
 class Request {
@@ -15,7 +15,5 @@ class Request {
 }
 
 $oRequest = new Request();
-
-$validation = new Validation($request);
 
 ?>
