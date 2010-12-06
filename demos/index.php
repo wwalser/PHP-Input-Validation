@@ -29,16 +29,22 @@ if ($_POST['validate']) {
 	$oValidation = new Validation($oRequest);
 	$aErrors = $oValidation->validate(validateIndex(), $_POST);
 	if (empty($aErrors)){
+		// process account registration
 		$aErrors['valid'] = true;
+		$aErrors['global'] = 'You have successfully registered an account with MacGuffin App!';
 	}
 	echo json_encode($aErrors);
-	die;
+	exit(0);
 } else if ($_POST) {
 	$oValidation = new Validation($oRequest);
 	$aErrors = $oValidation->validate(validateIndex(), $_POST);
+	if (empty($aErrors)) {
+		// process account registration
+		include('templates/success.php');
+		exit(0);
+	}
 }
 
-$foo = 'this works?';
 include('templates/demo.php');
 
 ?>

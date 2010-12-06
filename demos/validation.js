@@ -1,7 +1,7 @@
 (function(){
 
 $(document).ready(function() {
-	var messageBox = $('#validationFailure');
+	var messageBox = $('#messageBox');
 
 	$('form').submit(function() {
 		var form = $(this);
@@ -18,17 +18,16 @@ $(document).ready(function() {
 			success: function(data) {
 				// did validation pass?
 				data = $.parseJSON(data);
-				console.log(data);
+				messageBox.text('');
+				messageBox.append($('<p>' + data.global + '</p>'));
 				if (data.valid) {
-					return true;
+					form.remove();
 				} else {
-					messageBox.text('');
-					messageBox.append($('<p>' + data.global + '</p>'));
 					$.each(data.details, function(input, errorMessage){
 						messageBox.append(errorMessage);
 					});
-					messageBox.show();
 				}
+				messageBox.show();
 			}
 		});
 		return false;

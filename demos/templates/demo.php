@@ -8,7 +8,7 @@
 	<body>
 		<h1>MacGuffin App *beta</h1>
 		<p>Register for an account (doesn't actually save any data).</p>
-		<div class=<?php if (!empty($aErrors)) {echo '"validationFailure"';} else {echo '"validationSuccess"';} ?> >
+		<div id="messageBox" class=<?php if (!empty($aErrors)) {echo '"validationFailure"';} else {echo '"validationSuccess"';} ?> >
 			<?php
 			if (!empty($aErrors)) {
 				echo $aErrors['global'];
