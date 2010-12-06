@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<link rel="stylesheet" type="text/css" media="all" href="style.css">
-		<script charset="utf-8" src="jquery-1.4.4.min.js"></script>
-		<script charset="utf-8" src="validation.js"></script>
+		<link rel="stylesheet" type="text/css" media="all" href="static/style.css">
+		<script charset="utf-8" src="static/jquery-1.4.4.min.js"></script>
+		<script charset="utf-8" src="static/validation.js"></script>
 	</head>
 	<body>
 		<h1>MacGuffin App *beta</h1>
