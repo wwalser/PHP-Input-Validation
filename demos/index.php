@@ -33,6 +33,9 @@ if ($_POST['validate']) {
 	}
 	echo json_encode($aErrors);
 	die;
+} else if ($_POST) {
+	$oValidation = new Validation($oRequest);
+	$aErrors = $oValidation->validate(validateIndex(), $_POST);
 }
 
 $foo = 'this works?';
