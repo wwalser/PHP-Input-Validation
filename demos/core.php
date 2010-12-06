@@ -12,6 +12,10 @@ class Request {
 	public function getType(){
 		return 'Web';
 	}
+
+	public static function displayErrors(){
+		return null;
+	}
 }
 
 $oRequest = new Request();

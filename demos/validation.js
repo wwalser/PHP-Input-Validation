@@ -1,4 +1,7 @@
+(function(){
+
 $(document).ready(function() {
+	var messageBox = $('#validationFailure');
 
 	$('form').submit(function() {
 		var form = $(this);
@@ -14,10 +17,16 @@ $(document).ready(function() {
 			})(),
 			success: function(data) {
 				// did validation pass?
+				data = $.parseJSON(data);
 				if (data.valid) {
 					return true;
 				} else {
-					return false;
+					messageBox.text('');
+					messageBox.append($('<p>' + data.global + '</p>'));
+					$.each(data.details, function(input, errorMessage){
+						messageBox.append(errorMessage);
+					});
+					messageBox.show();
 				}
 			}
 		});
@@ -25,3 +34,5 @@ $(document).ready(function() {
 	});
 	
 });
+
+})();
