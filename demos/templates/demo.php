@@ -11,7 +11,7 @@
 		<div id="messageBox" class=<?php if (!empty($aErrors)) {echo '"validationFailure"';} else {echo '"validationSuccess"';} ?> >
 			<?php
 			if (!empty($aErrors)) {
-				echo $aErrors['global'];
+				echo '<p>' . $aErrors['global'] . '</p>';
 				foreach ($aErrors['details'] as $sError) {
 					echo $sError;
 				}
@@ -25,7 +25,7 @@
 			<input type="text" id="username" name="username" /><br />
 			<label for="password" name="password">Password:</label>
 			<input type="password" name="password" input="password" /><br />
-			<input type="submit" name="submit" input="submit" value="Create My Account" />
+			<input class="submit" type="submit" name="submit" input="submit" value="Create My Account" />
 		</form>
 	</body>
 </html>

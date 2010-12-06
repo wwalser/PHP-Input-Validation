@@ -1,3 +1,78 @@
-.validationSuccess{
-    display: none;
+body{
+	width:955px;
+	margin:0px auto;
 }
+
+.validationSuccess{
+	display: none;
+}
+
+.validationFailure{
+	display: block;
+	border: 2px solid #F6D10A;
+	margin: 20px 0;
+	padding:0 15px;
+
+	/*border*/
+	-moz-border-radius: 12px; 
+	-webkit-border-radius: 12px; 
+	border-radius: 12px; 
+
+	/*background gradient*/
+	background-color: #D6D1CA;
+	background-image: -moz-linear-gradient(top, #D6D1CA, #ffffff); 
+	background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #D6D1CA),color-stop(1, #ffffff)); 
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorStr='#D6D1CA', EndColorStr='#ffffff'); 
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#D6D1CA', EndColorStr='#ffffff')"; 
+	}
+.successMessage{
+	border: 2px solid #709900;
+	margin: 20px 0;
+	padding:0 15px;
+
+	/*border*/
+	-moz-border-radius: 12px; 
+	-webkit-border-radius: 12px; 
+	border-radius: 12px; 
+
+	/*background gradient*/
+	background-color: #9ab34d;
+	background-image: -moz-linear-gradient(top, #9ab34d, #ffffff); 
+	background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #9ab34d),color-stop(1, #ffffff)); 
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorStr='#9ab34d', EndColorStr='#ffffff'); 
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#9ab34d', EndColorStr='#ffffff')"; 	
+}
+
+label {
+	display: block;
+	float: left;
+	width: 100px;
+}
+
+input,textarea,select{
+	outline: none;
+	letter-spacing: 0;
+	height: 29px;
+	width:284px;
+	border: 2px solid #D6D6D6; -moz-border-radius:8px;
+	border-radius:8px; -webkit-border-radius:8px;
+	font-size:15px;
+	color:#777;
+	margin-left:15px;
+	margin-bottom:10px;
+	padding:8px 35px 0 6px;
+	}
+	input.submit{
+		height: 50px;
+		padding: 0;
+		margin: 0;
+		background-color: #D6D1CA;
+		background-image: -moz-linear-gradient(top, #D6D1CA, #ffffff); 
+		background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #D6D1CA),color-stop(1, #ffffff)); 
+		filter:  progid:DXImageTransform.Microsoft.gradient(startColorStr='#D6D1CA', EndColorStr='#ffffff'); 
+		-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#D6D1CA', EndColorStr='#ffffff')"; 
+	}
+input:focus,textarea:focus{ 
+    border:2px solid #F6D10A;
+}
+    

@@ -22,12 +22,14 @@ $(document).ready(function() {
 				messageBox.append($('<p>' + data.global + '</p>'));
 				if (data.valid) {
 					form.remove();
+					messageBox.removeClass('validationFailure validationSuccess')
+						.addClass('successMessage');
 				} else {
 					$.each(data.details, function(input, errorMessage){
 						messageBox.append(errorMessage);
 					});
+					messageBox.removeClass('validationSuccess').addClass('validationFailure');
 				}
-				messageBox.show();
 			}
 		});
 		return false;
