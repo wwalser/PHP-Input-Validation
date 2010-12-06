@@ -18,6 +18,7 @@ $(document).ready(function() {
 			success: function(data) {
 				// did validation pass?
 				data = $.parseJSON(data);
+				console.log(data);
 				if (data.valid) {
 					return true;
 				} else {
