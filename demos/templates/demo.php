@@ -8,7 +8,7 @@
 	<body>
 		<h1>MacGuffin App *beta</h1>
 		<p>Register for an account (doesn't actually save any data).</p>
-		<div id="messageBox" class=<?php if (!empty($aErrors)) {echo '"validationFailure"';} else {echo '"validationSuccess"';} ?> >
+		<div id="messageBox" class="<?php if ($aErrors['valid']) {echo 'successMessage';} else if (!empty($aErrors)) {echo 'validationFailure';}?>" >
 			<?php
 			if (!empty($aErrors)) {
 				echo '<p>' . $aErrors['global'] . '</p>';
@@ -18,6 +18,9 @@
 			}
 			?>
 		</div>
+		<?php 
+			if (empty($aErrors) || !$aErrors['valid']) {
+		?>
 		<form method="post" id="" action="">
 			<label for="email" name="email">Email:</label>
 			<input type="text" name="email" input="email" /><br />
@@ -27,5 +30,6 @@
 			<input type="password" name="password" input="password" /><br />
 			<input class="submit" type="submit" name="submit" input="submit" value="Create My Account" />
 		</form>
+		<?php } ?>
 	</body>
 </html>

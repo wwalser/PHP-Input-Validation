@@ -24,23 +24,19 @@ function validateIndex(){
 	);
 }
 
-if ($_POST['validate']) {
-	unset($_POST['validate']);
-	$oValidation = new Validation($oRequest);
-	$aErrors = $oValidation->validate(validateIndex(), $_POST);
-	if (empty($aErrors)){
-		// process account registration
-		$aErrors['valid'] = true;
-		$aErrors['global'] = 'You have successfully registered an account with MacGuffin App!';
-	}
-	echo json_encode($aErrors);
-	exit(0);
-} else if ($_POST) {
+
+if ($_POST) {
 	$oValidation = new Validation($oRequest);
 	$aErrors = $oValidation->validate(validateIndex(), $_POST);
 	if (empty($aErrors)) {
 		// process account registration
-		include('templates/success.php');
+			$aErrors['valid'] = true;
+			$aErrors['global'] = 'You have successfully registered an account with MacGuffin App!';
+			$aErrors['details'][] = 'Take this time to celebrate.';
+	}
+	
+	if ($_POST['validate']) {
+		echo json_encode($aErrors);
 		exit(0);
 	}
 }
